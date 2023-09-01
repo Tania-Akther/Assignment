@@ -10,7 +10,20 @@ namespace Assignment.Models
         {
             _applicationDbContext = applicationDbContext;
         }
+        //Get Company List
+        public async Task<List<Company>> GetAllCompanies()
+        {
+            return await _applicationDbContext.Companies.ToListAsync();
+        }
+        //Get Department List
+        public async Task<List<Department>> GetAllDepartments(int companyId)
+        {
+            var departments = await _applicationDbContext.Departments
+                .Where(d => d.CompanyID == companyId)
+                .ToListAsync();
 
+            return departments;
+        }
         //Get Employee List
         public async Task<List<Employee>> GetAllEmployees()
         {

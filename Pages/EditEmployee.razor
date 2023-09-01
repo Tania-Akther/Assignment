@@ -1,0 +1,43 @@
+﻿@page "/EditEmployee/{Id}"
+@using Assignment.Models
+@inject EmployeeService employeeService
+@inject NavigationManager NavigationManager
+
+<h2>Edit Employee</h2>
+<hr />
+
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input form="Name" class="form-control" @bind="@obj.EmployeeId" />
+            </div>
+            <div class="form-group">
+                <label for="Code" class="control-label"> Code</label>
+                <input for="Code" class="form-control" @bind="@obj.Code" />
+            </div>
+            <div class="form-group">
+                <label for="EmployeeName" class="control-label"> Employee Name</label>
+                <input for="EmployeeName" class="form-control" @bind="@obj.EmployeeName" />
+            </div>
+            <div class="form-group">
+                <label for="PhoneNo" class="control-label"> Phone No</label>
+                <input for="PhoneNo" class="form-control" @bind="@obj.PhoneNo" />
+            </div>
+            <div class="form-group">
+                <label for="Address" class="control-label">Address</label>
+                <input form="Address" class="form-control" @bind="@obj.Address" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-2">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" @onclick="@UpdateEmployee" value="Update" />
+                <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
