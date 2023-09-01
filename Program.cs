@@ -1,5 +1,6 @@
 using Assignment.Context;
 using Assignment.Data;
+using Assignment.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;

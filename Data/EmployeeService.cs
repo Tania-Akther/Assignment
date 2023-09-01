@@ -25,9 +25,9 @@ namespace Assignment.Models
         }
 
         //Get Employee By Id  
-        public async Task<Employee> GetEmployeeById(int id)
+        public async Task<Employee> GetEmployeeById(int employeeId)
         {
-            Employee employee = await _applicationDbContext.Employees.FirstOrDefaultAsync(c => c.Id.Equals(id));
+            Employee employee = await _applicationDbContext.Employees.FirstOrDefaultAsync(c => c.EmployeeId.Equals(employeeId));
             return employee;
         }
 
